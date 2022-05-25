@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+ <div class="col-12 py-3">
+<table class="table table-striped text-dark table-bordered col-xs-12 mx-auto table-hover table-xs">
+    <thead>
+        <tr class="bg-secondary">
+            <th scope="col" class="text-light">#</th>
+            <th scope="col" class="text-light">CREATED</th>
+            <th scope="col" class="text-light">STATUS</th>
+            <th scope="col" class="text-light">ACTIONS</th>
+        </tr>
+    </thead>
+{% for file in csvObject %}
+    <tr hx-target="this" hx-swap="outerHTML">
+        <td style="text-align: center"><b>{{ forloop.counter }}</b></td>
+        <td class="text-dark"><b>{{ file.file_created }}</b></td>
+        <td style="text-align: center"><p class="text-success
+"><b>Ready</b></p></td>
+        <td><a href = "{% url 'downloadcsv' file.filename%}"> <button type="submit" class="btn bg-gradient-success w-auto me-2"><i class="fas fa-cog">&nbsp;Download CSV</i> </button></a></td>
+    </tr>
+{% endfor %}
+</table>
+    </div>
+{% endblock %}

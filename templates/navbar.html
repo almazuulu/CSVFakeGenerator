@@ -1,0 +1,120 @@
+{% load static %}
+
+{#<!-- Navbar Light -->#}
+{#  <nav class="navbar navbar-expand-lg navbar-light py-3 mb-5">#}
+{#    <div class="container">#}
+{#      <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation" >#}
+{#        <ul class="navbar-nav navbar-nav-hover#}
+{#">#}
+{#            <li class="nav-item mx-2 ms-lg-5 border border-secondary text-light">#}
+{#            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center hover" href="{% url 'listschema' %}">#}
+{#                <strong>All Schemas</strong>#}
+{#            </a>#}
+{#          </li>#}
+{##}
+{#             <li class="nav-item mx-2 ms-lg-5 border border-secondary text-light">#}
+{#            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center hover" href="{% url 'create-schema' %}">#}
+{#                <strong class="text-dark">Create Scheme</strong>#}
+{#            </a>#}
+{#          </li>#}
+{##}
+{#            <li class="nav-item mx-2 ms-lg-5 border border-secondary text-light">#}
+{#            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center hover" href="{% url 'listfiledownload' %}">#}
+{#                <strong>Generated Files</strong>#}
+{#            </a>#}
+{#          </li>#}
+{##}
+{#            <li class="nav-item mx-2 ms-lg-5 border border-secondary float-right">#}
+{#            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center hover" href="{% url 'logout' %}">#}
+{#                <strong>Logout</strong>#}
+{#            </a>#}
+{#          </li>#}
+{#        </ul>#}
+{#      </div>#}
+{#    </div>#}
+{#  </nav>#}
+
+{#<div class="topnav" id="myTopnav">#}
+{#  <a href="#home" class="active">Home</a>#}
+{#  <a href="#news">News</a>#}
+{#  <a href="#contact">Contact</a>#}
+{#  <a href="#about">About</a>#}
+{#  <a href="javascript:void(0);" class="icon" onclick="myFunction()">#}
+{#    <i class="fa fa-bars"></i>#}
+{#  </a>#}
+{#</div>#}
+
+{#<header class="header">#}
+{#        <!-- Logo -->#}
+{#        <a href="#" class="logo">LR</a>#}
+{#        <!-- Hamburger icon -->#}
+{#        <input class="side-menu" type="checkbox" id="side-menu"/>#}
+{#        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>#}
+{#        <!-- Menu -->#}
+{#        <nav class="nav">#}
+{#            <ul class="menu">#}
+{#                <li><a href="#">Gallery</a></li>#}
+{#                <li><a href="#">Blog</a> </li>#}
+{#                <li><a href="#">About</a></li>#}
+{#            </ul>#}
+{#        </nav>#}
+{#    </header>#}
+
+{#<div style="padding-left:16px">#}
+{#  <h2>Responsive Topnav Example</h2>#}
+{#  <p>Resize the browser window to see how it works.</p>#}
+{#</div>#}
+
+
+
+
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark z-index-3 py-3 my-2 border-radius-2xl
+" style="background-color: #03e5b7;
+background-image: linear-gradient(315deg, #03e5b7 0%, #037ade 74%);">
+  <div class="container">
+    <a class="navbar-brand text-light" href="{% url 'listschema' %}" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+      Fake CSV Data Generator
+    </a>
+    <a href="{% url 'logout' %}" class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">Log out</a>
+    <button class="navbar-toggler shadow-none ms-2 border border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon mt-2 text-dark justify-content-end" style="">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
+      <ul class="navbar-nav navbar-nav-hover mx-auto">
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button" href="{% url 'listschema' %}">
+            All schemas
+          </a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button" href="{% url 'create-schema' %}">
+            Create Schema
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button" href="{% url 'listfiledownload' %}">
+            Generated Files
+          </a>
+        </li>
+
+        <li class="nav-item dropdown dropdown-hover mx-2">
+          <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav d-lg-block d-none">
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="btn btn-sm  bg-gradient-primary  mb-0 me-1" role="button">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

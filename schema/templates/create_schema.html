@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="border border-secondary border-radius-lg  pt-3">
+        {% if scheme %}
+        <form method="POST" enctype="multipart/form-data" hx-post="{% url 'edit-scheme' scheme.id %}">
+        {% else %}
+            <form method="POST" enctype="multipart/form-data" hx-post=".">
+            {% endif %}
+        {% csrf_token %}
+        <h3> New Schema </h3>
+         <div class="border border-secondary border-radius-2xl pt-3">
+        {{ schemaform.as_p }}
+         </div>
+        <h3> Schema Columns</h3>
+        <div class="border border-secondary border-radius-2xl pt-3 mb-3">
+
+        {{ formset.as_p}}
+
+            <div id = "columnforms">
+            </div>
+        </div>
+        <button class="btn btn-info" hx-get="{% url 'column-form' %}" hx-swap="beforeend" hx-target="#columnforms">
+                Add Column
+            </button>
+             <button class="btn btn-success">Submit</button>
+
+    </form>
+    </div>
+{% endblock %}

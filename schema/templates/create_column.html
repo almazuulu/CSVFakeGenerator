@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ schemaform.as_p }}
+{#        {{  form.as_p }}#}
+        {{ formset.as_p }}
+
+    <button>Submit</button>
+
+
+    </form>
+     <button hx-get="{% url 'column-form' %}" hx-swap="beforeend" hx-target="#columnforms" >
+        Add Columns
+    </button>
+    <div id = "columnforms">
+{#{% for column in columns %}#}
+{#    {% include 'partials/detail_column.html' %}#}
+{#{% endfor %}#}
+</div>
+{% endblock %}
